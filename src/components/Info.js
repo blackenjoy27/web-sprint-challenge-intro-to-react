@@ -1,22 +1,59 @@
 import React from "react";
-import styled from "styled-components"
-
-const BasicInfoDiv = styled.div`
-    display:flex;
+import styled ,{keyframes} from "styled-components";
 
 
+const kf = keyframes`
+    100%{
+        opacity:1;
+    }
 `
-
-const DetailInfoDiv = styled.div`
+const BasicInfoDiv = styled.div`
+    
     display:flex;
-    flex-direction:column;
+    
+    h2{
+        margin-left:2rem;
+        width:75%;
+    }
+    button{
+        width:13%;
+        height:2rem;
+        margin:auto;
+        border-radius:0px;
+        &:hover{
+            border-radius:20px 0px 20px 0px;
+            transition: all 1.5s ease-in-out;
+        }
+        transition: all 1s ease-in-out;
+
+    }
+
+    
+`
+const DetailInfoDiv = styled.div`
+   margin-left:2rem;
+   
+`
+const InfoDiv = styled.div`
+    opacity:0;
+    border:solid 1px ${pr=> pr.theme.borderColor};
+    border-radius:5px;
+    margin: 1rem auto;
+    background-image: url("https://wallpapercave.com/wp/6mYMKGh.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+
+    &:hover{
+        border-width:2px;
+    }
+    animation: ${kf} 3s ease-in-out forwards;
+
 `
 const Info = (prop)=>{
     const {character,detail,showDetail} = prop;
 
-    
     return(
-        <div>
+        <InfoDiv>
             <BasicInfoDiv>
                 <h2>{character.name}</h2>
                 <button onClick={()=>showDetail(character)}>{character.birth_year}</button>
@@ -33,7 +70,7 @@ const Info = (prop)=>{
                     <h3>Skin Color:{character.skin_color}</h3>
                 </DetailInfoDiv>
             }
-        </div>
+        </InfoDiv>
     )
 }
 export default Info;

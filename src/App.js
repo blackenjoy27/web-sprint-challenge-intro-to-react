@@ -2,7 +2,20 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Character from "./components/Character"
 import './App.css';
+import styled from 'styled-components';
 
+const ContentsDiv = styled.div`
+display:flex;
+flex-direction: column;	
+align-items: center;
+
+h1{
+  margin-top:2rem;
+}
+
+color: ${pr=>pr.theme.fontColor};
+
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -19,7 +32,6 @@ const App = () => {
     axios.get("https://swapi.dev/api/people")
     .then(res=>{
         setPeople(res.data);
-        
     })
     .catch(error=>{
       console.log("Something went wrong");
@@ -33,13 +45,11 @@ const App = () => {
       setDetail(character);
     }
   }
-
-
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
+    <ContentsDiv>
+      <h1 >React Wars</h1>
       {people && <Character characters={people} detail={detail} showDetail={showDetail}/>}
-    </div>
+    </ContentsDiv>
   );
 }
 
