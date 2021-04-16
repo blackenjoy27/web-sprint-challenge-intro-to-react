@@ -12,7 +12,7 @@ const BasicInfoDiv = styled.div`
     display:flex;
     
     h2{
-        margin-left:2rem;
+
         width:75%;
     }
     button{
@@ -25,16 +25,10 @@ const BasicInfoDiv = styled.div`
             transition: all 1.5s ease-in-out;
         }
         transition: all 1s ease-in-out;
-
     }
-
-    
-`
-const DetailInfoDiv = styled.div`
-   margin-left:2rem;
-   
 `
 const InfoDiv = styled.div`
+    padding-left:2rem;
     opacity:0;
     border:solid 1px ${pr=> pr.theme.borderColor};
     border-radius:5px;
@@ -61,14 +55,14 @@ const Info = (prop)=>{
             
             {
                 detail === character &&
-                <DetailInfoDiv>
+                <div>
                     <h3>Gender: {character.gender}</h3>
                     <h3>Height:{character.height}</h3>
                     <h3>Mass:{character.mass}</h3>
                     <h3>Eye Color:{character.eye_color}</h3>
                     <h3>Hair Color:{character.hair_color}</h3>
                     <h3>Skin Color:{character.skin_color}</h3>
-                </DetailInfoDiv>
+                </div>
             }
         </InfoDiv>
     )

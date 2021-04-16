@@ -32,11 +32,21 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+  React JS is a library create by Facebook that serve as an framework for UI components.
+
 1. Describe component state.
+
+  Something that will mutate.
 
 1. Describe props.
 
+  Something that is pass into the component, so the component have the access of the element of its parent element.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+  Side effect is will be provoke when the element in the depency array is mutate.  To sync effects in a React component,
+  we include the state or the props in the depency array that the useEffect has.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
