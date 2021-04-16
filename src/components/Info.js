@@ -12,7 +12,6 @@ const BasicInfoDiv = styled.div`
     display:flex;
     
     h2{
-
         width:75%;
     }
     button{
@@ -34,7 +33,6 @@ const InfoDiv = styled.div`
     border-radius:5px;
     margin: 1rem auto;
     background-image: url("https://wallpapercave.com/wp/6mYMKGh.jpg");
-    background-repeat:no-repeat;
     background-size: cover;
 
     &:hover{
